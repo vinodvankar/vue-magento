@@ -1,0 +1,201 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "yarn concurrently \"yarn start\" \"yarn start:middleware\"",
+      "url": [
+        "http://localhost:3000/",
+        "http://localhost:3000/default/men.html",
+        "http://localhost:3000/default/supernova-sport-pant.html"
+      ],
+      "numberOfRuns": 3,
+      "assert": {
+        "includePassedAssertions": true,
+        "assertMatrix": [
+          {
+            "matchingUrlPattern": ".*",
+            "assertions": {
+              "bootup-time": "off",
+              "critical-request-chains": "off",
+              "csp-xss": "off",
+              "cumulative-layout-shift": "off",
+              "deprecations": "off",
+              "dom-size": "off",
+              "duplicated-javascript": "off",
+              "errors-in-console": "error",
+              "estimated-input-latency": "off",
+              "first-contentful-paint": "off",
+              "first-cpu-idle": "off",
+              "first-meaningful-paint": "off",
+              "font-display": "off",
+              "font-size": "off",
+              "image-aspect-ratio": "off",
+              "image-size-responsive": "off",
+              "interactive": "off",
+              "largest-contentful-paint": "off",
+              "lcp-lazy-loaded": "warn",
+              "legacy-javascript": "off",
+              "long-tasks": "warn",
+              "main-thread-tasks": "off",
+              "mainthread-work-breakdown": "off",
+              "max-potential-fid": "off",
+              "metrics": "off",
+              "modern-image-formats": "off",
+              "network-requests": "off",
+              "network-rtt": "off",
+              "network-server-latency": "off",
+              "no-document-write": "off",
+              "no-unload-listeners": "off",
+              "no-vulnerable-libraries": "off",
+              "non-composited-animations": "off",
+              "offscreen-images": "off",
+              "performance-budget": "off",
+              "preload-fonts": "off",
+              "preload-lcp-image": "off",
+              "redirects": "off",
+              "render-blocking-resources": "off",
+              "resource-summary": "off",
+              "server-response-time": "off",
+              "service-worker": "off",
+              "speed-index": "off",
+              "time-to-first-byte": "off",
+              "timing-budget": "off",
+              "total-blocking-time": "off",
+              "total-byte-weight": "off",
+              "unminified-css": "off",
+              "unminified-javascript": "off",
+              "unsized-images": "off",
+              "unused-css-rules": "off",
+              "unused-javascript": "off",
+              "user-timings": "off",
+              "uses-long-cache-ttl": "off",
+              "uses-optimized-images": "off",
+              "uses-passive-event-listeners": "off",
+              "uses-rel-preconnect": "off",
+              "uses-rel-preload": "off",
+              "uses-responsive-images": "off",
+              "uses-text-compression": "off",
+              "uses-webp-images": "off"
+            }
+          },
+          {
+            "matchingUrlPattern": "http://localhost:3000/$",
+            "assertions": {
+              "cumulative-layout-shift": [
+                "error",
+                {
+                  "aggregationMethod": "median",
+                  "maxNumericValue": 0.1
+                }
+              ],
+              "dom-size": [
+                "error",
+                {
+                  "maxNumericValue": 1000
+                }
+              ],
+              "largest-contentful-paint": [
+                "warn",
+                {
+                  "aggregationMethod": "optimistic",
+                  "maxNumericValue": 4000
+                }
+              ],
+              "total-blocking-time": [
+                "warn",
+                {
+                  "aggregationMethod": "optimistic",
+                  "maxNumericValue": 450
+                }
+              ],
+              "total-byte-weight": [
+                "error",
+                {
+                  "maxNumericValue": 510000
+                }
+              ]
+            }
+          },
+          {
+            "matchingUrlPattern": "http://localhost:3000/default/men.html",
+            "assertions": {
+              "cumulative-layout-shift": [
+                "error",
+                {
+                  "aggregationMethod": "median",
+                  "maxNumericValue": 0.1
+                }
+              ],
+              "dom-size": [
+                "error",
+                {
+                  "maxNumericValue": 2400
+                }
+              ],
+              "largest-contentful-paint": [
+                "warn",
+                {
+                  "aggregationMethod": "optimistic",
+                  "maxNumericValue": 3300
+                }
+              ],
+              "total-blocking-time": [
+                "warn",
+                {
+                  "aggregationMethod": "optimistic",
+                  "maxNumericValue": 1600
+                }
+              ],
+              "total-byte-weight": [
+                "error",
+                {
+                  "maxNumericValue": 2100000
+                }
+              ]
+            }
+          },
+          {
+            "matchingUrlPattern": "http://localhost:3000/default/supernova-sport-pant.html",
+            "assertions": {
+              "cumulative-layout-shift": [
+                "error",
+                {
+                  "aggregationMethod": "median",
+                  "maxNumericValue": 0.2
+                }
+              ],
+              "dom-size": [
+                "error",
+                {
+                  "maxNumericValue": 1550
+                }
+              ],
+              "largest-contentful-paint": [
+                "warn",
+                {
+                  "aggregationMethod": "optimistic",
+                  "maxNumericValue": 4000
+                }
+              ],
+              "total-blocking-time": [
+                "warn",
+                {
+                  "aggregationMethod": "optimistic",
+                  "maxNumericValue": 850
+                }
+              ],
+              "total-byte-weight": [
+                "error",
+                {
+                  "maxNumericValue": 780000
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}

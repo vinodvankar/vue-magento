@@ -1,0 +1,4 @@
+**/node_modules/**/*
+**/lib/*
+static/sw.js
+.eslintrc.js
